@@ -1,0 +1,18 @@
+1.Какой командой нужно воспользоватся чтобы узнать свой user.neme и user.email в git bash?
+
+ git config --global -l
+
+2.Какой последовательностью команд нужно воспользоватся чтобы создать локальный репозиторий и добавить в него файлы?
+git init
+git add name_file
+git commit -m 'описание правок')
+
+3.Какая последовательность команда добавит новый файл index коммита?
+git add <file>
+
+4.Какая команда загрузит новый репозиторий c github.com? что предварительно нужно сделать на сервере github.com.
+  git remote add origin https://github.com/NadushaNovy/Git-NEW.git 
+    Предварительно нужно выгрузить публичный SSH -ключ на сервер github.com и создать новый репозиторий
+
+5.Как создать новый репозиторий на github.com из локальной консоли git bash?
+ curl -u 'USER:TOKEN' https://api.github.com/user/repos -d '{"name":"test"}'
