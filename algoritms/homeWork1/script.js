@@ -44,13 +44,13 @@ console.log(linearSearch(arr, 16 ));
 
 
 function findElement(array) {
-    for (let i = 1; i < array.length; i+=2){
-   if(array[i] != array[i-1] ){
-    return array[i-1];
+    for (let i = 0; i < array.length; i+=2){
+   if(array[i] != array[i+1] ){
+    return array[i];
    }
     }
     return -1;
 
 } 
 console.log (findElement([1, 1, 2, 2, 4, 4, 5, 6, 6]));
-console.log (findElement([1, 1, 2, 2, 4, 4, 5, 5, 6, 6]));
+console.log (findElement([1, 1, 2]));
