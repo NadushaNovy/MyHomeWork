@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.circle {
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: 1px solid black;
+    margin: 20px 100px ;
+   
+    
+}
+.buttons  {
+    display: flex;
+     gap: 10px;
+     
+}
+.buttons div {
+    border:  1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+}
