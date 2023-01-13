@@ -1,0 +1,16 @@
+1.Найти всех сотрудников, работающих в департаменте с id 90
+SELECT * FROM employees WHERE department_id = 90;
+2.Найти всех сотрудников, зарабатывающих больше 5000
+SELECT * FROM employees WHERE salary > 5000;
+3.Вывести всех сотрудников с jobid ‘FIACCOUNT’ и зарабатывающих меньше 8000
+SELECT * FROM employees WHERE job_id = 'FI_ACCOUNT' AND salary < 8000;
+4.Вывести сотрудников, у которых в фамилии в середине слова встречаются сочетания ‘kk’ или ‘ll’
+SELECT * FROM employees WHERE last_name LIKE '_%ll%_' OR last_name LIKE '_%kk%_';
+5.Вывести сотрудников с commissionpct NULL
+SELECT * FROM employees WHERE commission_pct IS NULL;
+6.Вывести всех сотрудников кроме тех, кто работает в департаментах 80 и 110
+SELECT * FROM employees WHERE department_id != 80 AND 110;
+Вывести сотрудников зарабатывающих от 5000 до 7000 (включая концы)
+SELECT * FROM employees WHERE salary BETWEEN 5000 AND 7000;
+
+
