@@ -23,3 +23,20 @@
     border-radius: 15px;
     padding: 10px;
 }
+
+.switch-button {
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: pink;
+    margin-right: 20px;
+}
+.switch_button-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    
+
+}

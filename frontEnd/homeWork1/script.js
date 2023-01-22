@@ -114,24 +114,51 @@ console.log(countCats(["cat", "mama-cat", "papa-cat", "dog"]));
 // (в примере: [ 1, 2, 7, 14, -8, 44 ])
 // Подсказка: понадобится typeof. В массиве могут быть или другие
 // массивы или числа
-
+        //Рекурсия
 function flattenArray (arr){
-    let newArr = [];
+    const result = [];
     for (let i = 0; i < arr.length; i++){
-  if (typeof arr[i] === 'number'){
-    newArr[i] = arr[i];
-  }
-   else if (typeof arr[i] === 'object'){
-    let arrayElement = arr[i];
-    for (let j = 0; j < arrayElement.length; j++ ){
-    newArr.push(arrayElement[j]);
-    
-  }
-    
-}
+        const item = arr[i];
+        if(typeof item === 'number'){
+            result.push(item);
+        }else {
+            const tmp = flattenArray(item);
+            for (let j = 0; j < tmp.length; j++){
+               result.push(tmp[j]);
+            }
+        }
+ 
     }
-return newArr;
+return result;
+
 }
 console.log(flattenArray([ 1, 2, [7, 14, -8], [], [ [ [ [ 44 ] ] ] ] ]));
 
-
+//// циклы
+function hasInnerArrays (arr){
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] === 'object'){
+            return true;
+        }
+    }
+    return false;
+}
+function flattenArray2(arr){
+    let result = [...arr];
+    while(hasInnerArrays(result)){
+        const tmp = [];
+        for (let i = 0; i < result.length; i++){
+            const item = result[i];
+            if (typeof item === 'number'){
+                tmp.push(item);
+            } else {
+                for (let j = 0; j < item.length; j++){
+                    tmp.push(item[j]);
+                }
+            }
+        }
+        result  = tmp;
+    }
+    return result
+}
+console.log(flattenArray2([ 1, 2, [7, 14, -8], [], [ [ [ [ 44 ] ] ] ] ]));
